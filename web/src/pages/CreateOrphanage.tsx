@@ -47,7 +47,6 @@ export default function CreateOrphanage() {
     
     setImages(Array.from(event.target.files))
   }
-
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
@@ -76,7 +75,6 @@ export default function CreateOrphanage() {
   return (
     <div id="page-create-orphanage">
       <Sidebar />
-
       <main>
         <form  onSubmit={handleSubmit} className="create-orphanage-form">
           <fieldset>
@@ -91,7 +89,7 @@ export default function CreateOrphanage() {
               <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               { latLng.latitude != 0 && (
                 <Marker 
-                  interactive={false} 
+                  interactive={false}
                   icon={happyMapIcon} 
                   position={[latLng.latitude,latLng.longitude]} 
                 />
@@ -152,5 +150,3 @@ export default function CreateOrphanage() {
     </div>
   );
 }
-
-// return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;
